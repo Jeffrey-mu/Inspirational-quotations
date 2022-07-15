@@ -1,21 +1,24 @@
----
-title: About
----
+# Inspiration Documentation
+## Introduction
+This API generates quotes to motivate or inspire you!
 
-<div class="text-center">
-  <!-- You can use Vue components inside markdown -->
-  <div i-carbon-dicom-overlay class="text-4xl -mb-6 m-auto" />
-  <h3>About</h3>
-</div>
+## Overview
+A GET request to this API returns data in the body as a JSON dump of the author and quote.
 
-[Vitesse](https://github.com/antfu/vitesse) is an opinionated [Vite](https://github.com/vitejs/vite) starter template made by [@antfu](https://github.com/antfu) for mocking apps swiftly. With **file-based routing**, **components auto importing**, **markdown support**, I18n, PWA and uses **UnoCSS** for styling and icons.
+## Caching
+The API uses a cache, which expires every hour so quotes do not get updated in this period.
 
-```js
-// syntax highlighting example
-function vitesse() {
-  const foo = 'bar'
-  console.log(foo)
+## Usage
+GET https://api.goprogram.ai/inspiration
+
+The request takes no parameters, headers or query strings.
+
+## Example
+curl -X GET https://api.goprogram.ai/inspiration
+Generates:
+```json
+{
+  "quote": "You must do the thing you think you cannot do.",
+  "author": "Eleanor Roosevelt"
 }
 ```
-
-Check out the [GitHub repo](https://github.com/antfu/vitesse) for more details.
