@@ -2,7 +2,7 @@
 const data = ref<object>({})
 function getData() {
   fetch('https://api.goprogram.ai/inspiration')
-    .then((res) => {
+    .then((res: Response) => {
       return res.json()
     })
     .then((res) => {
